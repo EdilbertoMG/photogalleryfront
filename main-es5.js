@@ -598,19 +598,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "uploadPhoto",
         value: function uploadPhoto(title, description) {
           this.photogallery.createPhotoInAlbum(title.value, description.value, this.file, this.id_album).subscribe(function (res) {
-            console.log(res);
+            alert("Saved photo");
+            location.reload();
           }, function (err) {
-            console.log(err);
+            alert("Couldn't save photo");
+            console.log(err.error);
           });
+          return false;
         }
       }, {
         key: "uploadAlbum",
         value: function uploadAlbum(titleAlbum, descriptionAlbum) {
           this.photogallery.createAlbum(titleAlbum.value, descriptionAlbum.value).subscribe(function (res) {
+            alert("Saved Album");
             location.reload();
           }, function (err) {
-            console.log(err);
+            alert("Couldn't save Album");
+            console.log(err.error);
           });
+          return false;
         }
       }]);
 
@@ -940,30 +946,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var album_r39 = ctx.$implicit;
+        var album_r40 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", album_r39._id);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", album_r40._id);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](album_r39.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](album_r40.title);
       }
     }
 
     function OnePhotoComponent_ng_template_1_ng_template_1_ng_template_9_Template(rf, ctx) {
       if (rf & 1) {
-        var _r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r42 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 15);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("submit", function OnePhotoComponent_ng_template_1_ng_template_1_ng_template_9_Template_form_submit_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r42);
 
-          var _r37 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](5);
+          var _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](5);
 
-          var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+          var ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-          return ctx_r40.addPhotoToAlbum(ctx_r40.id_photo, _r37);
+          return ctx_r41.addPhotoToAlbum(ctx_r41.id_photo, _r38);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 16);
@@ -992,17 +998,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+        var ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r36.albums);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r37.albums);
       }
     }
 
     function OnePhotoComponent_ng_template_1_ng_template_1_Template(rf, ctx) {
       if (rf & 1) {
-        var _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r44 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 5);
 
@@ -1031,11 +1037,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 12);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OnePhotoComponent_ng_template_1_ng_template_1_Template_button_click_11_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r43);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r44);
 
-          var ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          return ctx_r42.deletePhoto(ctx_r42.id_photo);
+          return ctx_r43.deletePhoto(ctx_r43.id_photo);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Delete photo");
@@ -1058,25 +1064,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](10);
+        var _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](10);
 
-        var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+        var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r33.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r34.title);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r33.description);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r34.description);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r33.veryfidataalbums)("ngIfElse", _r35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r34.veryfidataalbums)("ngIfElse", _r36);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r33.img, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"])("alt", ctx_r33.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx_r34.img, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"])("alt", ctx_r34.title);
       }
     }
 
@@ -1088,11 +1094,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
+        var _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
 
-        var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r30.loading)("ngIfElse", _r32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r31.loading)("ngIfElse", _r33);
       }
     }
 
@@ -1188,9 +1194,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         if (rf & 2) {
-          var _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
+          var _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.veryfidata)("ngIfElse", _r29);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.veryfidata)("ngIfElse", _r30);
         }
       },
       directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _shared_loading_loading_component__WEBPACK_IMPORTED_MODULE_4__["LoadingComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]],
@@ -1265,25 +1271,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _shared_add_add_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _shared_loading_loading_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../shared/loading/loading.component */
+    "./src/app/components/shared/loading/loading.component.ts");
+    /* harmony import */
+
+
+    var _shared_add_add_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../shared/add/add.component */
     "./src/app/components/shared/add/add.component.ts");
     /* harmony import */
 
 
-    var _search_search_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _search_search_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../search/search.component */
     "./src/app/components/search/search.component.ts");
-    /* harmony import */
-
-
-    var _shared_loading_loading_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ../shared/loading/loading.component */
-    "./src/app/components/shared/loading/loading.component.ts");
 
     function PhotosComponent_div_0_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " no photos upload one\n");
 
@@ -1291,7 +1297,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function PhotosComponent_ng_template_1_app_loading_0_Template(rf, ctx) {
+    function PhotosComponent_app_loading_1_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-loading");
       }
@@ -1301,7 +1307,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return [a0];
     };
 
-    function PhotosComponent_ng_template_1_div_9_Template(rf, ctx) {
+    function PhotosComponent_ng_template_2_div_8_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 10);
 
@@ -1327,31 +1333,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function PhotosComponent_ng_template_1_Template(rf, ctx) {
+    function PhotosComponent_ng_template_2_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, PhotosComponent_ng_template_1_app_loading_0_Template, 1, 0, "app-loading", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-add");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-add");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 4);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 4);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "app-search");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-search");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 5);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h1", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h1", 6);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Thumbnail Gallery");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Thumbnail Gallery");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "hr", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "hr", 7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 8);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, PhotosComponent_ng_template_1_div_9_Template, 3, 5, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, PhotosComponent_ng_template_2_div_8_Template, 3, 5, "div", 9);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1359,13 +1363,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r16.loading);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r16.photos);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r17.photos);
       }
     }
 
@@ -1410,23 +1412,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     PhotosComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: PhotosComponent,
       selectors: [["app-photos"]],
-      decls: 3,
-      vars: 2,
-      consts: [["class", "alert alert-warning", "role", "alert", 4, "ngIf", "ngIfElse"], ["main_content", ""], ["role", "alert", 1, "alert", "alert-warning"], [4, "ngIf"], [1, "col-12", "mt-2", "animated", "fast", "fadeIn", 2, "padding-left", "0px"], [1, "container"], [1, "font-weight-light", "text-center", "text-lg-left", "mt-4", "mb-0"], [1, "mt-2", "mb-5"], [1, "row", "text-center", "text-lg-left"], ["class", "col-lg-3 col-md-4 col-6 animated fast fadeIn", 4, "ngFor", "ngForOf"], [1, "col-lg-3", "col-md-4", "col-6", "animated", "fast", "fadeIn"], [1, "d-block", "mb-4", "h-100", 3, "routerLink"], ["width", "400px", "height", "300px", 1, "img-fluid", "img-thumbnail", 3, "src", "alt"]],
+      decls: 4,
+      vars: 3,
+      consts: [["class", "alert alert-warning", "role", "alert", 4, "ngIf", "ngIfElse"], [4, "ngIf"], ["main_content", ""], ["role", "alert", 1, "alert", "alert-warning"], [1, "col-12", "mt-2", "animated", "fast", "fadeIn", 2, "padding-left", "0px"], [1, "container"], [1, "font-weight-light", "text-center", "text-lg-left", "mt-4", "mb-0"], [1, "mt-2", "mb-5"], [1, "row", "text-center", "text-lg-left"], ["class", "col-lg-3 col-md-4 col-6 animated fast fadeIn", 4, "ngFor", "ngForOf"], [1, "col-lg-3", "col-md-4", "col-6", "animated", "fast", "fadeIn"], [1, "d-block", "mb-4", "h-100", 3, "routerLink"], ["width", "400px", "height", "300px", 1, "img-fluid", "img-thumbnail", 3, "src", "alt"]],
       template: function PhotosComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, PhotosComponent_div_0_Template, 2, 0, "div", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, PhotosComponent_ng_template_1_Template, 10, 2, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, PhotosComponent_app_loading_1_Template, 1, 0, "app-loading", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, PhotosComponent_ng_template_2_Template, 9, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         }
 
         if (rf & 2) {
-          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
+          var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.veryfidata)("ngIfElse", _r15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.veryfidata)("ngIfElse", _r16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.loading);
         }
       },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _shared_add_add_component__WEBPACK_IMPORTED_MODULE_4__["AddComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_5__["SearchComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _shared_loading_loading_component__WEBPACK_IMPORTED_MODULE_6__["LoadingComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"]],
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _shared_loading_loading_component__WEBPACK_IMPORTED_MODULE_4__["LoadingComponent"], _shared_add_add_component__WEBPACK_IMPORTED_MODULE_5__["AddComponent"], _search_search_component__WEBPACK_IMPORTED_MODULE_6__["SearchComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"]],
       encapsulation: 2
     });
     /*@__PURE__*/
@@ -1528,15 +1536,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var photo_r50 = ctx.$implicit;
+        var photo_r51 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](3, _c0, photo_r50._id));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](3, _c0, photo_r51._id));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", photo_r50.imageURL, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"])("alt", photo_r50.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", photo_r51.imageURL, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"])("alt", photo_r51.title);
       }
     }
 
@@ -1550,11 +1558,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r48.photos);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r49.photos);
       }
     }
 
@@ -1616,7 +1624,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       consts: [[1, "row", "animated", "fast", "fadeIn"], [1, "col-xs-10", "col-sm-6", "col-md-6", "col-lg-4", "col-xl-4"], ["type", "text", "placeholder", "Search photo", 1, "form-control", 3, "keyup"], ["termino", ""], [1, "col-xs-2", "col-sm-2", "col-md-2", "col-lg-2", "col-xl-2"], ["class", "text-center", 4, "ngIf"], [4, "ngIf", "ngIfElse"], ["template", ""], [1, "text-center"], ["src", "../../../assets/img/loading.svg", 2, "width", "40px"], [1, "row", "text-center", "text-lg-left"], ["class", "col-lg-3 col-md-4 col-6 animated fast fadeIn mt-2", 4, "ngFor", "ngForOf"], [1, "col-lg-3", "col-md-4", "col-6", "animated", "fast", "fadeIn", "mt-2"], [1, "d-block", "mb-4", "h-100", 3, "routerLink"], ["width", "400px", "height", "300px", 1, "img-fluid", "img-thumbnail", 3, "src", "alt"]],
       template: function SearchComponent_Template(rf, ctx) {
         if (rf & 1) {
-          var _r51 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
@@ -1625,11 +1633,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "input", 2, 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keyup", function SearchComponent_Template_input_keyup_2_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r51);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r52);
 
-            var _r44 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](3);
+            var _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](3);
 
-            return ctx.buscar(_r44.value);
+            return ctx.buscar(_r45.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1650,7 +1658,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         if (rf & 2) {
-          var _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
+          var _r48 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
@@ -1658,7 +1666,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.nodata)("ngIfElse", _r47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.nodata)("ngIfElse", _r48);
         }
       },
       directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkWithHref"]],
@@ -1720,6 +1728,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _loading_loading_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../loading/loading.component */
+    "./src/app/components/shared/loading/loading.component.ts");
+
+    function AddComponent_app_loading_13_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-loading");
+      }
+    }
 
     var AddComponent =
     /*#__PURE__*/
@@ -1732,9 +1758,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       _createClass(AddComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }, {
         key: "onPhotoSelected",
         value: function onPhotoSelected(files) {
           this.file = files.item(0);
@@ -1742,20 +1765,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "uploadPhoto",
         value: function uploadPhoto(title, description) {
+          this.loading = true;
           this.servicePhoto.createPhoto(title.value, description.value, this.file).subscribe(function (res) {
-            console.log(res);
+            alert("Saved Photo");
+            location.reload();
           }, function (err) {
-            console.log(err);
+            alert("Couldn't save photo");
+            console.log(err.error);
           });
+          this.loading = false;
+          return false;
         }
       }, {
         key: "uploadAlbum",
         value: function uploadAlbum(titleAlbum, descriptionAlbum) {
           this.servicePhoto.createAlbum(titleAlbum.value, descriptionAlbum.value).subscribe(function (res) {
+            alert("Saved Album");
             location.reload();
           }, function (err) {
-            console.log(err);
+            alert("Couldn't save Album");
+            console.log(err.error);
           });
+          return false;
         }
       }]);
 
@@ -1769,12 +1800,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AddComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: AddComponent,
       selectors: [["app-add"]],
-      decls: 48,
-      vars: 0,
-      consts: [["type", "button", "data-toggle", "modal", "data-target", "#exampleModal", 1, "btn", "btn-primary", "animated", "fast", "fadeIn"], ["data-toggle", "tooltip", "data-placement", "top", "title", "Upload photos", 1, "fas", "fa-cloud-upload-alt"], ["type", "button", "data-toggle", "modal", "data-target", "#exampleModal2", 1, "btn", "btn-primary", "ml-1", "animated", "fast", "fadeIn"], ["data-toggle", "tooltip", "data-placement", "top", "title", "Create albums", 1, "fas", "fa-folder-plus"], ["id", "exampleModal", "tabindex", "-1", "role", "dialog", "aria-labelledby", "exampleModalLabel", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog"], [1, "modal-content"], [1, "modal-header"], ["id", "exampleModalLabel", 1, "modal-title"], ["type", "button", "data-dismiss", "modal", "aria-label", "Close", 1, "close"], ["aria-hidden", "true"], ["enctype", "multipart/form-data", 3, "submit"], [1, "modal-body"], [1, "form-group"], ["type", "text", "placeholder", "Photo's Title", "required", "", 1, "form-control", "m-1"], ["title", ""], ["id", "exampleFormControlTextarea1", "rows", "2", "placeholder", "Photo's Description", "required", "", 1, "form-control", "m-1"], ["description", ""], ["type", "file", "accept", "image/*", "required", "", 1, "form-control-file", "m-1", 3, "change"], ["image", ""], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-secondary"], ["type", "submit", 1, "btn", "btn-primary"], ["id", "exampleModal2", "tabindex", "-1", "role", "dialog", "aria-labelledby", "exampleModalLabel", "aria-hidden", "true", 1, "modal", "fade"], [3, "submit"], ["type", "text", "placeholder", "Album's Title", "required", "", 1, "form-control", "m-1"], ["titleAlbum", ""], ["rows", "2", "placeholder", "Album's Description", "required", "", 1, "form-control", "m-1"], ["descriptionAlbum", ""]],
+      decls: 49,
+      vars: 1,
+      consts: [["type", "button", "data-toggle", "modal", "data-target", "#exampleModal", 1, "btn", "btn-primary", "animated", "fast", "fadeIn"], ["data-toggle", "tooltip", "data-placement", "top", "title", "Upload photos", 1, "fas", "fa-cloud-upload-alt"], ["type", "button", "data-toggle", "modal", "data-target", "#exampleModal2", 1, "btn", "btn-primary", "ml-1", "animated", "fast", "fadeIn"], ["data-toggle", "tooltip", "data-placement", "top", "title", "Create albums", 1, "fas", "fa-folder-plus"], ["id", "exampleModal", "tabindex", "-1", "role", "dialog", "aria-labelledby", "exampleModalLabel", "aria-hidden", "true", 1, "modal", "fade"], ["role", "document", 1, "modal-dialog"], [1, "modal-content"], [1, "modal-header"], ["id", "exampleModalLabel", 1, "modal-title"], ["type", "button", "data-dismiss", "modal", "aria-label", "Close", 1, "close"], ["aria-hidden", "true"], [4, "ngIf"], ["enctype", "multipart/form-data", 3, "submit"], [1, "modal-body"], [1, "form-group"], ["type", "text", "placeholder", "Photo's Title", "required", "", 1, "form-control", "m-1"], ["title", ""], ["id", "exampleFormControlTextarea1", "rows", "2", "placeholder", "Photo's Description", "required", "", 1, "form-control", "m-1"], ["description", ""], ["type", "file", "accept", "image/*", "required", "", 1, "form-control-file", "m-1", 3, "change"], ["image", ""], [1, "modal-footer"], ["type", "button", "data-dismiss", "modal", 1, "btn", "btn-secondary"], ["type", "submit", 1, "btn", "btn-primary"], ["id", "exampleModal2", "tabindex", "-1", "role", "dialog", "aria-labelledby", "exampleModalLabel", "aria-hidden", "true", 1, "modal", "fade"], [3, "submit"], ["type", "text", "placeholder", "Album's Title", "required", "", 1, "form-control", "m-1"], ["titleAlbum", ""], ["rows", "2", "placeholder", "Album's Description", "required", "", 1, "form-control", "m-1"], ["descriptionAlbum", ""]],
       template: function AddComponent_Template(rf, ctx) {
         if (rf & 1) {
-          var _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
 
@@ -1814,29 +1845,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "form", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, AddComponent_app_loading_13_Template, 1, 0, "app-loading", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("submit", function AddComponent_Template_form_submit_13_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "form", 12);
 
-            var _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("submit", function AddComponent_Template_form_submit_14_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
 
-            var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](19);
+            var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](18);
 
-            return ctx.uploadPhoto(_r22, _r23);
+            var _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](20);
+
+            return ctx.uploadPhoto(_r23, _r24);
           });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "input", 14, 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "textarea", 16, 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "input", 15, 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "input", 18, 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "textarea", 17, 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function AddComponent_Template_input_change_20_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "input", 19, 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function AddComponent_Template_input_change_21_listener($event) {
             return ctx.onPhotoSelected($event.target.files);
           });
 
@@ -1846,21 +1879,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 21);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "button", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "button", 22);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, " Close ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "button", 22);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Save photos");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, " Close ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "button", 23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Save photos");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1870,67 +1899,71 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 23);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "h5", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Create album");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "button", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "span", 10);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, "\xD7");
-
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "h5", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "Create album");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "form", 24);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "button", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("submit", function AddComponent_Template_form_submit_36_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "span", 10);
 
-            var _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, "\xD7");
 
-            var _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            return ctx.uploadAlbum(_r25, _r26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "form", 25);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("submit", function AddComponent_Template_form_submit_37_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
+
+            var _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](41);
+
+            var _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](43);
+
+            return ctx.uploadAlbum(_r26, _r27);
           });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "div", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](39, "input", 25, 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](41, "textarea", 27, 28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](40, "input", 26, 27);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 20);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "button", 21);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, " Close ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "textarea", 28, 29);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "button", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "Save album");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 21);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "button", 22);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, " Close ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "button", 23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "Save album");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1944,7 +1977,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.loading);
+        }
       },
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _loading_loading_component__WEBPACK_IMPORTED_MODULE_4__["LoadingComponent"]],
       encapsulation: 2
     });
     /*@__PURE__*/
