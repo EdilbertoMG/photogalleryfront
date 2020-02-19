@@ -353,7 +353,7 @@
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\emarrugo\Desktop\PhotoGalleryFronend\src\styles.css */
+    /*! C:\Users\edilb\Desktop\PhotoGallery\PhotoGalleryFronend\src\styles.css */
     "./src/styles.css");
     /***/
   }
