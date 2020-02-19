@@ -1426,12 +1426,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             if (_this7.photos.length == 0) {
               _this7.veryfidata = true;
-              _this7.loading = true;
+              _this7.loading = false;
             } else {
               _this7.veryfidata = false;
+              _this7.loading = false;
             }
           });
-          this.loading = false;
         }
       }]);
 

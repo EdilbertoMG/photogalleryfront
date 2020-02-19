@@ -724,13 +724,13 @@ class PhotosComponent {
             this.photos = data.photos;
             if (this.photos.length == 0) {
                 this.veryfidata = true;
-                this.loading = true;
+                this.loading = false;
             }
             else {
                 this.veryfidata = false;
+                this.loading = false;
             }
         });
-        this.loading = false;
     }
 }
 PhotosComponent.ɵfac = function PhotosComponent_Factory(t) { return new (t || PhotosComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_photogallery_service__WEBPACK_IMPORTED_MODULE_1__["PhotogalleryService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
